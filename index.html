@@ -1,336 +1,519 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>مطوية – الحملة الوطنية التحسيسية 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"/>
-<style>
-  :root {
-    --gd: #1a3d1f; --gm: #2e6b35; --gl: #4a9b54;
-    --go: #c8a84b; --gol: #e8cc7a; --cr: #f7f3e8;
-    --wh: #ffffff; --tx: #111a12;
-  }
-  *{box-sizing:border-box;margin:0;padding:0;}
-  body{
-    font-family:'Cairo',sans-serif;
-    background:#e8e4d8;
-    display:flex;flex-direction:column;align-items:center;
-    padding:32px 16px 48px;
-    color:var(--tx);
-  }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>الحملة الوطنية التحسيسية – برج باجي مختار 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --green-dark:  #1a3d1f;
+      --green-mid:   #2e6b35;
+      --green-light: #4a9b54;
+      --gold:        #c8a84b;
+      --gold-light:  #e8cc7a;
+      --cream:       #f7f3e8;
+      --white:       #ffffff;
+      --text-dark:   #111a12;
+    }
 
-  /* PRINT HINT */
-  .print-hint{
-    font-family:'Cairo',sans-serif;
-    font-size:.82rem;color:#555;margin-bottom:18px;
-    background:#fff8e7;border:1px solid var(--go);
-    padding:8px 20px;border-radius:4px;
-  }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  /* BROCHURE WRAPPER */
-  .brochure{
-    display:flex;
-    flex-direction:row-reverse; /* RTL: panels flow right to left visually */
-    width:100%;max-width:1080px;
-    box-shadow:0 8px 40px rgba(0,0,0,.22);
-    border-radius:4px;
-    overflow:hidden;
-  }
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: var(--cream);
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
 
-  /* PANELS */
-  .panel{
-    flex:1;min-width:0;
-    display:flex;flex-direction:column;
-  }
-  .panel + .panel{ border-right:2px solid rgba(200,168,75,.35); }
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(160deg, var(--green-dark) 0%, var(--green-mid) 60%, var(--green-light) 100%);
+      padding: 60px 32px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
 
-  /* ── PANEL 1: COVER (right-most when folded) ── */
-  .cover{
-    background:linear-gradient(170deg,var(--gd) 0%,var(--gm) 60%,var(--gl) 100%);
-    align-items:center;text-align:center;
-    padding:44px 22px 36px;
-    position:relative;overflow:hidden;
-    min-height:620px;
-  }
-  .cover::before{
-    content:'';position:absolute;inset:0;
-    background:radial-gradient(ellipse at 65% 25%,rgba(200,168,75,.2) 0%,transparent 65%);
-    pointer-events:none;
-  }
-  .cv-badge{
-    border:1.5px solid var(--go);color:var(--gol);
-    font-size:.7rem;letter-spacing:.14em;
-    padding:5px 14px;border-radius:2px;margin-bottom:22px;
-    display:inline-block;position:relative;z-index:1;
-  }
-  .cv-title{
-    font-family:'Amiri',serif;font-size:2rem;
-    color:#fff;line-height:1.3;margin-bottom:6px;
-    position:relative;z-index:1;
-  }
-  .cv-title span{color:var(--gol);}
-  .cv-sub{font-size:.88rem;color:rgba(255,255,255,.78);margin-bottom:8px;position:relative;z-index:1;}
-  .cv-loc{font-size:.82rem;color:var(--gol);margin-bottom:28px;position:relative;z-index:1;}
-  .cv-slogan{
-    background:rgba(200,168,75,.18);border:1px solid var(--go);
-    color:var(--gol);font-weight:700;font-size:.9rem;
-    padding:12px 20px;border-radius:4px;
-    display:inline-block;position:relative;z-index:1;
-  }
-  .cv-divider{
-    width:48px;height:2px;background:var(--go);
-    margin:22px auto;position:relative;z-index:1;
-  }
-  .cv-meta{
-    display:flex;flex-direction:column;gap:10px;
-    width:100%;position:relative;z-index:1;margin-top:auto;padding-top:22px;
-  }
-  .cv-meta-item{
-    display:flex;align-items:center;gap:8px;
-    background:rgba(255,255,255,.08);border:1px solid rgba(200,168,75,.25);
-    border-radius:3px;padding:8px 12px;
-    font-size:.78rem;color:rgba(255,255,255,.85);font-weight:600;
-  }
-  .cv-meta-item svg{width:16px;height:16px;flex-shrink:0;stroke:var(--gol);}
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 70% 30%, rgba(200,168,75,.18) 0%, transparent 65%),
+                  radial-gradient(ellipse at 20% 80%, rgba(255,255,255,.07) 0%, transparent 50%);
+      pointer-events: none;
+    }
 
-  /* ── PANEL 2: MIDDLE ── */
-  .middle{
-    background:var(--wh);
-    padding:0;
-    min-height:620px;
-  }
-  .mid-top{
-    background:var(--gd);
-    padding:28px 20px 24px;
-  }
-  .mid-top .lbl{font-size:.65rem;font-weight:900;letter-spacing:.18em;color:var(--gol);text-transform:uppercase;margin-bottom:6px;}
-  .mid-top .ttl{font-family:'Amiri',serif;font-size:1.4rem;color:#fff;}
+    .hero-badge {
+      display: inline-block;
+      border: 1.5px solid var(--gold);
+      color: var(--gold-light);
+      font-size: .78rem;
+      letter-spacing: .15em;
+      padding: 5px 18px;
+      border-radius: 2px;
+      margin-bottom: 28px;
+      font-family: 'Cairo', sans-serif;
+      animation: fadeDown .7s ease both;
+    }
 
-  .guide-list{display:flex;flex-direction:column;gap:0;}
-  .guide-row{
-    display:flex;align-items:flex-start;gap:12px;
-    padding:14px 18px;
-    border-bottom:1px solid rgba(0,0,0,.06);
-  }
-  .guide-row:last-child{border-bottom:none;}
-  .gi{
-    width:34px;height:34px;border-radius:50%;
-    background:var(--gm);display:flex;align-items:center;justify-content:center;
-    flex-shrink:0;
-  }
-  .gi svg{width:17px;height:17px;stroke:#fff;stroke-width:2;fill:none;}
-  .gt{font-size:.88rem;font-weight:700;color:var(--gd);margin-bottom:2px;}
-  .gd{font-size:.78rem;color:#444;line-height:1.55;}
+    .hero-logo {
+      font-family: 'Amiri', serif;
+      font-size: clamp(2rem, 7vw, 3.6rem);
+      color: var(--white);
+      line-height: 1.25;
+      margin-bottom: 6px;
+      animation: fadeDown .8s .1s ease both;
+    }
 
-  .axes-block{background:var(--cr);padding:20px 18px;}
-  .axes-block .lbl{font-size:.65rem;font-weight:900;letter-spacing:.18em;color:var(--gm);text-transform:uppercase;margin-bottom:6px;}
-  .axes-block .ttl{font-family:'Amiri',serif;font-size:1.15rem;color:var(--gd);margin-bottom:12px;}
-  .axis-row{
-    display:flex;align-items:center;gap:10px;
-    padding:8px 12px;background:#fff;border-radius:3px;
-    border-right:3px solid var(--gl);margin-bottom:8px;
-    font-size:.82rem;font-weight:600;color:var(--gd);
-  }
-  .axis-row:last-child{margin-bottom:0;}
-  .adot{width:8px;height:8px;border-radius:50%;background:var(--gm);flex-shrink:0;}
+    .hero-logo span { color: var(--gold-light); }
 
-  /* ── PANEL 3: BACK (left-most when folded) ── */
-  .back{
-    background:var(--cr);
-    min-height:620px;
-    padding:0;
-  }
-  .obj-block{
-    background:var(--gm);padding:22px 18px 18px;
-  }
-  .obj-block .lbl{font-size:.65rem;font-weight:900;letter-spacing:.18em;color:var(--gol);text-transform:uppercase;margin-bottom:6px;}
-  .obj-block .ttl{font-family:'Amiri',serif;font-size:1.2rem;color:#fff;margin-bottom:14px;}
-  .obj-cards{display:flex;flex-direction:column;gap:10px;}
-  .obj-card{
-    background:rgba(255,255,255,.12);border:1px solid rgba(200,168,75,.3);
-    border-radius:3px;padding:12px 14px;
-  }
-  .obj-n{font-family:'Amiri',serif;font-size:1.6rem;color:var(--gol);line-height:1;}
-  .obj-t{font-size:.82rem;font-weight:700;color:#fff;margin-top:2px;}
+    .hero-sub {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,.78);
+      margin-bottom: 36px;
+      animation: fadeDown .8s .2s ease both;
+    }
 
-  .tips-block{padding:20px 18px;}
-  .tips-block .lbl{font-size:.65rem;font-weight:900;letter-spacing:.18em;color:var(--gm);text-transform:uppercase;margin-bottom:6px;}
-  .tips-block .ttl{font-family:'Amiri',serif;font-size:1.2rem;color:var(--gd);margin-bottom:12px;}
-  .tip-row{
-    display:flex;align-items:flex-start;gap:10px;
-    background:#fff;border-radius:3px;padding:9px 12px;
-    border-right:3px solid var(--gm);margin-bottom:8px;
-  }
-  .tip-row:last-child{margin-bottom:0;}
-  .tn{
-    min-width:26px;height:26px;border-radius:50%;
-    background:var(--gm);color:#fff;
-    display:flex;align-items:center;justify-content:center;
-    font-size:.75rem;font-weight:900;flex-shrink:0;
-  }
-  .tt{font-size:.78rem;line-height:1.55;color:var(--tx);}
+    .hero-slogan {
+      display: inline-block;
+      background: rgba(200,168,75,.18);
+      border: 1px solid var(--gold);
+      color: var(--gold-light);
+      font-size: clamp(.95rem, 2.5vw, 1.2rem);
+      font-weight: 700;
+      padding: 14px 32px;
+      border-radius: 4px;
+      animation: fadeDown .8s .35s ease both;
+    }
 
-  .partners-block{
-    background:var(--gd);padding:16px 18px;margin-top:auto;
-  }
-  .partners-block .lbl{font-size:.65rem;font-weight:900;letter-spacing:.15em;color:var(--gol);text-transform:uppercase;margin-bottom:10px;}
-  .ptags{display:flex;flex-wrap:wrap;gap:7px;}
-  .ptag{
-    background:rgba(255,255,255,.1);border:1px solid rgba(200,168,75,.35);
-    color:var(--gol);font-size:.72rem;font-weight:700;
-    padding:5px 10px;border-radius:2px;
-  }
-  .footer-strip{
-    background:#111;color:rgba(255,255,255,.6);
-    font-size:.7rem;text-align:center;padding:10px 12px;line-height:1.7;
-  }
-  .footer-strip strong{color:var(--gol);}
+    /* leaf decoration */
+    .hero-leaf {
+      position: absolute;
+      bottom: -20px; left: 50%;
+      transform: translateX(-50%);
+      width: 50px; height: 50px;
+      background: var(--cream);
+      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+      z-index: 2;
+    }
 
-  /* PRINT */
-  @media print{
-    body{background:#fff;padding:0;}
-    .print-hint{display:none;}
-    .brochure{box-shadow:none;max-width:100%;width:100%;}
-  }
+    /* ── META STRIP ── */
+    .meta-strip {
+      background: var(--gold);
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      padding: 16px 24px;
+    }
 
-  /* RESPONSIVE: stack on small screens */
-  @media(max-width:700px){
-    .brochure{flex-direction:column;}
-    .panel+.panel{border-right:none;border-top:2px solid rgba(200,168,75,.35);}
-    .cover{min-height:auto;}
-    .middle,.back{min-height:auto;}
-  }
-</style>
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: .88rem;
+      font-weight: 700;
+      color: var(--green-dark);
+    }
+
+    .meta-item svg { width: 18px; height: 18px; }
+
+    /* ── SECTION SHARED ── */
+    section { padding: 64px 24px; }
+
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: .72rem;
+      font-weight: 900;
+      letter-spacing: .2em;
+      color: var(--green-mid);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--green-light);
+      opacity: .35;
+    }
+
+    .section-title {
+      font-family: 'Amiri', serif;
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      color: var(--green-dark);
+      margin-bottom: 40px;
+    }
+
+    /* ── OBJECTIVES ── */
+    .objectives { background: var(--white); }
+
+    .obj-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .obj-card {
+      background: var(--cream);
+      border-top: 3px solid var(--green-mid);
+      padding: 28px 20px;
+      border-radius: 4px;
+      transition: transform .25s, box-shadow .25s;
+    }
+
+    .obj-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 28px rgba(46,107,53,.12);
+    }
+
+    .obj-num {
+      font-family: 'Amiri', serif;
+      font-size: 2.4rem;
+      color: var(--green-light);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .obj-text {
+      font-size: .95rem;
+      font-weight: 600;
+      color: var(--green-dark);
+    }
+
+    /* ── TIPS ── */
+    .tips { background: var(--cream); }
+
+    .tips-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+
+    .tip-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      background: var(--white);
+      border-radius: 6px;
+      padding: 20px 18px;
+      border-right: 4px solid var(--green-mid);
+      transition: border-color .2s;
+    }
+
+    .tip-item:hover { border-color: var(--gold); }
+
+    .tip-num {
+      min-width: 36px; height: 36px;
+      background: var(--green-mid);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 900;
+      font-size: .9rem;
+    }
+
+    .tip-text {
+      font-size: .92rem;
+      line-height: 1.65;
+      color: var(--text-dark);
+    }
+
+    /* ── GUIDELINES ── */
+    .guidelines { background: var(--green-dark); }
+
+    .guidelines .section-label { color: var(--gold-light); }
+    .guidelines .section-label::after { background: var(--gold); opacity: .3; }
+    .guidelines .section-title { color: var(--white); }
+
+    .guide-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .guide-card {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(200,168,75,.3);
+      border-radius: 6px;
+      padding: 28px 22px;
+      transition: background .25s;
+    }
+
+    .guide-card:hover { background: rgba(200,168,75,.1); }
+
+    .guide-icon {
+      width: 44px; height: 44px;
+      background: var(--gold);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    .guide-icon svg { width: 22px; height: 22px; fill: var(--green-dark); }
+
+    .guide-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      margin-bottom: 8px;
+    }
+
+    .guide-desc {
+      font-size: .87rem;
+      color: rgba(255,255,255,.75);
+      line-height: 1.65;
+    }
+
+    /* ── AXES ── */
+    .axes { background: var(--white); }
+
+    .axes-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-width: 680px;
+    }
+
+    .axis-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 20px;
+      border-radius: 4px;
+      background: var(--cream);
+      border-right: 3px solid var(--green-light);
+      font-size: .96rem;
+      font-weight: 600;
+      color: var(--green-dark);
+    }
+
+    .axis-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: var(--green-mid);
+      flex-shrink: 0;
+    }
+
+    /* ── PARTNERS ── */
+    .partners { background: var(--cream); text-align: center; }
+
+    .partner-logos {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 8px;
+    }
+
+    .partner-tag {
+      background: var(--white);
+      border: 1.5px solid var(--green-mid);
+      color: var(--green-dark);
+      font-weight: 700;
+      font-size: .9rem;
+      padding: 10px 22px;
+      border-radius: 3px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--green-dark);
+      color: rgba(255,255,255,.65);
+      text-align: center;
+      padding: 32px 24px;
+      font-size: .82rem;
+      line-height: 1.8;
+    }
+
+    footer strong { color: var(--gold-light); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .55s ease, transform .55s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* responsive container */
+    .container { max-width: 1100px; margin: 0 auto; }
+  </style>
 </head>
 <body>
 
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-badge">وزارة البريد والمواصلات السلكية واللاسلكية</div>
+    <h1 class="hero-logo">الحملة الوطنية <span>التحسيسية</span></h1>
+    <p class="hero-sub">الموسم الصيفي 2026 — ولاية برج باجي مختار</p>
+    <div class="hero-slogan">«&nbsp;اجعل التغذية السليمة أسلوب حياة دائم&nbsp;»</div>
+    <div class="hero-leaf"></div>
+  </header>
 
-
-<div class="brochure">
-
-  <!-- PANEL 1: COVER -->
-  <div class="panel cover">
-    <div class="cv-badge">وزارة البريد والمواصلات السلكية واللاسلكية</div>
-    <h1 class="cv-title">الحملة الوطنية<br/><span>التحسيسية</span></h1>
-    <p class="cv-sub">الموسم الصيفي 2026</p>
-    <p class="cv-loc"> ولاية برج باجي مختار</p>
-    <div class="cv-slogan">«&nbsp;اجعل التغذية السليمة أسلوب حياة دائم&nbsp;»</div>
-    <div class="cv-divider"></div>
-    <div class="cv-meta">
-      <div class="cv-meta-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-        تاريخ الانطلاق: 02 جوان 2026
-      </div>
-      <div class="cv-meta-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        الوقاية من التسممات الغذائية
-      </div>
+  <!-- META STRIP -->
+  <div class="meta-strip">
+    <div class="meta-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      تاريخ الانطلاق: 02 جوان 2026
+    </div>
+    <div class="meta-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+      ولاية برج باجي مختار
+    </div>
+    <div class="meta-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      الوقاية من التسممات الغذائية
     </div>
   </div>
 
-  <!-- PANEL 2: MIDDLE -->
-  <div class="panel middle">
-    <div class="mid-top">
-      <div class="lbl">إرشادات الوقاية</div>
-      <div class="ttl">غذاء آمن للجميع</div>
-    </div>
-    <div class="guide-list">
-      <div class="guide-row">
-        <div class="gi"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
-        <div>
-          <div class="gt">اقتناء آمن</div>
-          <div class="gd">اقتناء المواد الغذائية من مصادر موثوقة وتجنب المنتجات مجهولة المصدر.</div>
+  <!-- OBJECTIVES -->
+  <section class="objectives">
+    <div class="container reveal">
+      <div class="section-label">أهداف الحملة</div>
+      <h2 class="section-title">لماذا هذه الحملة؟</h2>
+      <div class="obj-grid">
+        <div class="obj-card reveal">
+          <div class="obj-num">01</div>
+          <div class="obj-text">رفع الوعي الصحي لدى المواطنين</div>
         </div>
-      </div>
-      <div class="guide-row">
-        <div class="gi"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg></div>
-        <div>
-          <div class="gt">الحفظ السليم</div>
-          <div class="gd">تجنب تعريض الأغذية للحرارة المرتفعة واحفظها وفق شروط التبريد المناسبة.</div>
+        <div class="obj-card reveal">
+          <div class="obj-num">02</div>
+          <div class="obj-text">الحد من التسممات الغذائية خلال فصل الصيف</div>
         </div>
-      </div>
-      <div class="guide-row">
-        <div class="gi"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
-        <div>
-          <div class="gt">مراقبة تاريخ الصلاحية</div>
-          <div class="gd">تحقق من تاريخ الإنتاج والانتهاء قبل شراء أو استهلاك أي منتج.</div>
-        </div>
-      </div>
-      <div class="guide-row">
-        <div class="gi"><svg viewBox="0 0 24 24"><path d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 003 0m0 0V8m0 3.5a1.5 1.5 0 113 0v1.5m0-1.5a1.5 1.5 0 013 0v4.5a6 6 0 01-12 0V14"/></svg></div>
-        <div>
-          <div class="gt">النظافة أساس الوقاية</div>
-          <div class="gd">غسل اليدين والأواني والخضر والفواكه جيدًا قبل الاستعمال.</div>
-        </div>
-      </div>
-      <div class="guide-row">
-        <div class="gi"><svg viewBox="0 0 24 24"><path d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"/></svg></div>
-        <div>
-          <div class="gt">التبليغ عن المخالفات</div>
-          <div class="gd">ساهم في حماية المجتمع بالإبلاغ عن المواد الغذائية الفاسدة أو المشبوهة.</div>
+        <div class="obj-card reveal">
+          <div class="obj-num">03</div>
+          <div class="obj-text">تعزيز ثقافة التغذية السليمة</div>
         </div>
       </div>
     </div>
+  </section>
 
-    <div class="axes-block" style="margin-top:auto;">
-      <div class="lbl">المحاور الرئيسية</div>
-      <div class="ttl">محاور الحملة</div>
-      <div class="axis-row"><div class="adot"></div>الوقاية من التسممات الغذائية</div>
-      <div class="axis-row"><div class="adot"></div>سلامة وجودة المواد الغذائية</div>
-      <div class="axis-row"><div class="adot"></div>احترام شروط الحفظ والتخزين</div>
-      <div class="axis-row"><div class="adot"></div>تعزيز ثقافة التغذية السليمة</div>
-    </div>
-  </div>
+  <!-- GUIDELINES -->
+  <section class="guidelines">
+    <div class="container reveal">
+      <div class="section-label">إرشادات الوقاية</div>
+      <h2 class="section-title">غذاء آمن للجميع</h2>
+      <div class="guide-grid">
 
-  <!-- PANEL 3: BACK -->
-  <div class="panel back" style="display:flex;flex-direction:column;">
-    <div class="obj-block">
-      <div class="lbl">أهداف الحملة</div>
-      <div class="ttl">لماذا هذه الحملة؟</div>
-      <div class="obj-cards">
-        <div class="obj-card">
-          <div class="obj-n">01</div>
-          <div class="obj-t">رفع الوعي الصحي لدى المواطنين</div>
+        <div class="guide-card reveal">
+          <div class="guide-icon">
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div class="guide-title">اقتناء آمن</div>
+          <div class="guide-desc">اقتناء المواد الغذائية من مصادر موثوقة وتجنب المنتجات مجهولة المصدر.</div>
         </div>
-        <div class="obj-card">
-          <div class="obj-n">02</div>
-          <div class="obj-t">الحد من التسممات الغذائية خلال فصل الصيف</div>
+
+        <div class="guide-card reveal">
+          <div class="guide-icon">
+            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+          </div>
+          <div class="guide-title">الحفظ السليم</div>
+          <div class="guide-desc">تجنب تعريض الأغذية للحرارة المرتفعة واحفظها وفق شروط التبريد المناسبة.</div>
         </div>
-        <div class="obj-card">
-          <div class="obj-n">03</div>
-          <div class="obj-t">تعزيز ثقافة التغذية السليمة</div>
+
+        <div class="guide-card reveal">
+          <div class="guide-icon">
+            <svg viewBox="0 0 24 24"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          </div>
+          <div class="guide-title">مراقبة تاريخ الصلاحية</div>
+          <div class="guide-desc">تحقق من تاريخ الإنتاج والانتهاء قبل شراء أو استهلاك أي منتج غذائي.</div>
         </div>
+
+        <div class="guide-card reveal">
+          <div class="guide-icon">
+            <svg viewBox="0 0 24 24"><path d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 003 0m0 0V8m0 3.5a1.5 1.5 0 113 0v1.5m0-1.5a1.5 1.5 0 013 0v4.5a6 6 0 01-12 0V14"/></svg>
+          </div>
+          <div class="guide-title">النظافة أساس الوقاية</div>
+          <div class="guide-desc">غسل اليدين والأواني والخضر والفواكه جيدًا قبل الاستعمال.</div>
+        </div>
+
+        <div class="guide-card reveal">
+          <div class="guide-icon">
+            <svg viewBox="0 0 24 24"><path d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"/></svg>
+          </div>
+          <div class="guide-title">التبليغ عن المخالفات</div>
+          <div class="guide-desc">ساهم في حماية المجتمع بالإبلاغ عن المواد الغذائية الفاسدة أو المشبوهة.</div>
+        </div>
+
       </div>
     </div>
+  </section>
 
-    <div class="tips-block">
-      <div class="lbl">نصائح عملية للمواطن</div>
-      <div class="ttl">7 قواعد ذهبية</div>
-      <div class="tip-row"><div class="tn">1</div><div class="tt">عدم شراء الأغذية المعرضة مباشرة لأشعة الشمس</div></div>
-      <div class="tip-row"><div class="tn">2</div><div class="tt">التأكد من سلامة التغليف وعدم وجود تلف أو انتفاخ</div></div>
-      <div class="tip-row"><div class="tn">3</div><div class="tt">حفظ اللحوم ومنتجات الحليب في درجات حرارة مناسبة</div></div>
-      <div class="tip-row"><div class="tn">4</div><div class="tt">غسل اليدين قبل إعداد الطعام وبعده دائمًا</div></div>
-      <div class="tip-row"><div class="tn">5</div><div class="tt">استهلاك مياه نظيفة وصالحة للشرب فقط</div></div>
-      <div class="tip-row"><div class="tn">6</div><div class="tt">عدم ترك الأغذية المطهية فترات طويلة خارج التبريد</div></div>
-      <div class="tip-row"><div class="tn">7</div><div class="tt">مراجعة الطبيب عند ظهور أي أعراض تسمم غذائي</div></div>
-    </div>
-
-    <div class="partners-block" style="margin-top:auto;">
-      <div class="lbl">بالتنسيق مع</div>
-      <div class="ptags">
-        <div class="ptag">مديرية التجارة</div>
-        <div class="ptag">بريد الجزائر</div>
-        <div class="ptag">اتصالات الجزائر</div>
-        <div class="ptag">موبيليس</div>
+  <!-- TIPS -->
+  <section class="tips">
+    <div class="container reveal">
+      <div class="section-label">نصائح عملية للمواطن</div>
+      <h2 class="section-title">7 قواعد ذهبية</h2>
+      <div class="tips-list">
+        <div class="tip-item reveal"><div class="tip-num">1</div><div class="tip-text">عدم شراء الأغذية المعرضة مباشرة لأشعة الشمس</div></div>
+        <div class="tip-item reveal"><div class="tip-num">2</div><div class="tip-text">التأكد من سلامة التغليف وعدم وجود تلف أو انتفاخ</div></div>
+        <div class="tip-item reveal"><div class="tip-num">3</div><div class="tip-text">حفظ اللحوم ومنتجات الحليب في درجات حرارة مناسبة</div></div>
+        <div class="tip-item reveal"><div class="tip-num">4</div><div class="tip-text">غسل اليدين قبل إعداد الطعام وبعده دائمًا</div></div>
+        <div class="tip-item reveal"><div class="tip-num">5</div><div class="tip-text">استهلاك مياه نظيفة وصالحة للشرب فقط</div></div>
+        <div class="tip-item reveal"><div class="tip-num">6</div><div class="tip-text">عدم ترك الأغذية المطهية فترات طويلة خارج التبريد</div></div>
+        <div class="tip-item reveal"><div class="tip-num">7</div><div class="tip-text">مراجعة الطبيب عند ظهور أي أعراض تسمم غذائي</div></div>
       </div>
     </div>
-    <div class="footer-strip">
-      <strong>مديرية البريد والمواصلات السلكية واللاسلكية — برج باجي مختار</strong><br/>
-      الحملة الوطنية للتحسيس والوقاية من التسممات الغذائية – 2026
-    </div>
-  </div>
+  </section>
 
-</div>
+  <!-- AXES -->
+  <section class="axes">
+    <div class="container reveal">
+      <div class="section-label">المحاور الرئيسية</div>
+      <h2 class="section-title">محاور الحملة</h2>
+      <div class="axes-list">
+        <div class="axis-item reveal"><div class="axis-dot"></div>الوقاية من التسممات الغذائية</div>
+        <div class="axis-item reveal"><div class="axis-dot"></div>سلامة وجودة المواد الغذائية</div>
+        <div class="axis-item reveal"><div class="axis-dot"></div>احترام شروط الحفظ والتخزين</div>
+        <div class="axis-item reveal"><div class="axis-dot"></div>تعزيز ثقافة التغذية السليمة</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNERS -->
+  <section class="partners">
+    <div class="container reveal">
+      <div class="section-label" style="justify-content:center;">الشركاء</div>
+      <h2 class="section-title">بالتنسيق مع</h2>
+      <div class="partner-logos">
+        <div class="partner-tag">مديرية التجارة</div>
+        <div class="partner-tag">بريد الجزائر</div>
+        <div class="partner-tag">اتصالات الجزائر</div>
+        <div class="partner-tag">موبيليس</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <strong>مديرية البريد والمواصلات السلكية واللاسلكية — برج باجي مختار</strong><br />
+    وزارة البريد والمواصلات السلكية واللاسلكية<br />
+    الحملة الوطنية للتحسيس والوقاية من التسممات الغذائية – 2026
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
